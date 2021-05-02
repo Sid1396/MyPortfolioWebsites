@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
                   Text(
-                    'Siddhesh',
+                    'Siddhesh Gurav',
                     style: GoogleFonts.ubuntu(
                         color: white,
                         fontSize: 28,
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                         decoration: TextDecoration.none),
                   ),
                   Text(
-                    ' Gurav.',
+                    ' Portfolio.',
                     style: GoogleFonts.ubuntu(
                         color: _opacity == 0 ? red : Colors.white,
                         fontWeight: FontWeight.bold,
@@ -173,131 +173,131 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             ),
-            ResponsiveVisibility(
-              visible: false,
-              visibleWhen: [
-                Condition.largerThan(name: MOBILE),
-                Condition.largerThan(name: TABLET),
-                Condition.largerThan(name: DESKTOP)
-              ],
-              child: Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TweenAnimationBuilder(
-                      child: HoverButton(
-                        onpressed: () {},
-                        hoverTextColor: _opacity == 0 ? red : Colors.white,
-                        textColor: white,
-                        child: Text(
-                          'Home',
-                          style: GoogleFonts.ubuntu(
-                              fontSize: size.width <= 1200 ? 16 : 20,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.none),
-                        ),
-                      ),
-                      duration: Duration(milliseconds: 3000),
-                      curve: Interval(0, 0.2, curve: Curves.easeIn),
-                      tween: Tween<double>(begin: 0, end: 1),
-                      builder: (BuildContext context, double position,
-                          Widget child) {
-                        return Opacity(
-                          opacity: position,
-                          child: child,
-                        );
-                      },
-                    ),
-                    SizedBox(width: size.width / 20),
-                    TweenAnimationBuilder(
-                      child: HoverButton(
-                        onpressed: () {},
-                        hoverTextColor: _opacity == 0 ? red : Colors.white,
-                        textColor: white,
-                        child: Text(
-                          'About',
-                          style: GoogleFonts.ubuntu(
-                              fontSize: size.width <= 1200 ? 16 : 20,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.none),
-                        ),
-                      ),
-                      duration: Duration(milliseconds: 3000),
-                      curve: Interval(0.2, 0.4, curve: Curves.easeIn),
-                      tween: Tween<double>(begin: 0, end: 1),
-                      builder: (BuildContext context, double position,
-                          Widget child) {
-                        return Opacity(
-                          opacity: position,
-                          child: child,
-                        );
-                      },
-                    ),
-                    SizedBox(width: size.width / 20),
-                    TweenAnimationBuilder(
-                      child: HoverButton(
-                        onpressed: () {},
-                        hoverTextColor: _opacity == 0 ? red : Colors.white,
-                        textColor: white,
-                        child: Text(
-                          'Projects',
-                          style: GoogleFonts.ubuntu(
-                              fontSize: size.width <= 1200 ? 16 : 20,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.none),
-                        ),
-                      ),
-                      duration: Duration(milliseconds: 3000),
-                      curve: Interval(0.4, 0.6, curve: Curves.easeIn),
-                      tween: Tween<double>(begin: 0, end: 1),
-                      builder: (BuildContext context, double position,
-                          Widget child) {
-                        return Opacity(
-                          opacity: position,
-                          child: child,
-                        );
-                      },
-                    ),
-                    SizedBox(width: size.width / 20),
-                    TweenAnimationBuilder(
-                      child: HoverButton(
-                        onpressed: () {},
-                        hoverTextColor: _opacity == 0 ? red : Colors.white,
-                        textColor: white,
-                        child: Text(
-                          'Contact',
-                          style: GoogleFonts.ubuntu(
-                              fontSize: size.width <= 1200 ? 16 : 20,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.none),
-                        ),
-                      ),
-                      duration: Duration(milliseconds: 3000),
-                      curve: Interval(0.6, 0.8, curve: Curves.easeIn),
-                      tween: Tween<double>(begin: 0, end: 1),
-                      builder: (BuildContext context, double position,
-                          Widget child) {
-                        return Opacity(
-                          opacity: position,
-                          child: child,
-                        );
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ResponsiveVisibility(
-              visible: false,
-              visibleWhen: [Condition.equals(name: MOBILE)],
-              child: Expanded(
-                  child: Container(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                    padding: EdgeInsets.only(right: 16),
-                    child: Icon(Icons.menu, color: white, size: 28)),
-              )),
-            ),
+            // ResponsiveVisibility(
+            //   visible: false,
+            //   visibleWhen: [
+            //     Condition.largerThan(name: MOBILE),
+            //     Condition.largerThan(name: TABLET),
+            //     Condition.largerThan(name: DESKTOP)
+            //   ],
+            //   child: Expanded(
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.end,
+            //       children: [
+            //         TweenAnimationBuilder(
+            //           child: HoverButton(
+            //             onpressed: () {},
+            //             hoverTextColor: _opacity == 0 ? red : Colors.white,
+            //             textColor: white,
+            //             child: Text(
+            //               'Home',
+            //               style: GoogleFonts.ubuntu(
+            //                   fontSize: size.width <= 1200 ? 16 : 20,
+            //                   fontWeight: FontWeight.bold,
+            //                   decoration: TextDecoration.none),
+            //             ),
+            //           ),
+            //           duration: Duration(milliseconds: 3000),
+            //           curve: Interval(0, 0.2, curve: Curves.easeIn),
+            //           tween: Tween<double>(begin: 0, end: 1),
+            //           builder: (BuildContext context, double position,
+            //               Widget child) {
+            //             return Opacity(
+            //               opacity: position,
+            //               child: child,
+            //             );
+            //           },
+            //         ),
+            //         SizedBox(width: size.width / 20),
+            //         TweenAnimationBuilder(
+            //           child: HoverButton(
+            //             onpressed: () {},
+            //             hoverTextColor: _opacity == 0 ? red : Colors.white,
+            //             textColor: white,
+            //             child: Text(
+            //               'About',
+            //               style: GoogleFonts.ubuntu(
+            //                   fontSize: size.width <= 1200 ? 16 : 20,
+            //                   fontWeight: FontWeight.bold,
+            //                   decoration: TextDecoration.none),
+            //             ),
+            //           ),
+            //           duration: Duration(milliseconds: 3000),
+            //           curve: Interval(0.2, 0.4, curve: Curves.easeIn),
+            //           tween: Tween<double>(begin: 0, end: 1),
+            //           builder: (BuildContext context, double position,
+            //               Widget child) {
+            //             return Opacity(
+            //               opacity: position,
+            //               child: child,
+            //             );
+            //           },
+            //         ),
+            //         SizedBox(width: size.width / 20),
+            //         TweenAnimationBuilder(
+            //           child: HoverButton(
+            //             onpressed: () {},
+            //             hoverTextColor: _opacity == 0 ? red : Colors.white,
+            //             textColor: white,
+            //             child: Text(
+            //               'Projects',
+            //               style: GoogleFonts.ubuntu(
+            //                   fontSize: size.width <= 1200 ? 16 : 20,
+            //                   fontWeight: FontWeight.bold,
+            //                   decoration: TextDecoration.none),
+            //             ),
+            //           ),
+            //           duration: Duration(milliseconds: 3000),
+            //           curve: Interval(0.4, 0.6, curve: Curves.easeIn),
+            //           tween: Tween<double>(begin: 0, end: 1),
+            //           builder: (BuildContext context, double position,
+            //               Widget child) {
+            //             return Opacity(
+            //               opacity: position,
+            //               child: child,
+            //             );
+            //           },
+            //         ),
+            //         SizedBox(width: size.width / 20),
+            //         TweenAnimationBuilder(
+            //           child: HoverButton(
+            //             onpressed: () {},
+            //             hoverTextColor: _opacity == 0 ? red : Colors.white,
+            //             textColor: white,
+            //             child: Text(
+            //               'Contact',
+            //               style: GoogleFonts.ubuntu(
+            //                   fontSize: size.width <= 1200 ? 16 : 20,
+            //                   fontWeight: FontWeight.bold,
+            //                   decoration: TextDecoration.none),
+            //             ),
+            //           ),
+            //           duration: Duration(milliseconds: 3000),
+            //           curve: Interval(0.6, 0.8, curve: Curves.easeIn),
+            //           tween: Tween<double>(begin: 0, end: 1),
+            //           builder: (BuildContext context, double position,
+            //               Widget child) {
+            //             return Opacity(
+            //               opacity: position,
+            //               child: child,
+            //             );
+            //           },
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            // ResponsiveVisibility(
+            //   visible: false,
+            //   visibleWhen: [Condition.equals(name: MOBILE)],
+            //   child: Expanded(
+            //       child: Container(
+            //     alignment: Alignment.centerRight,
+            //     child: Padding(
+            //         padding: EdgeInsets.only(right: 16),
+            //         child: Icon(Icons.menu, color: white, size: 28)),
+            //   )),
+            // ),
           ],
         ),
       ),
