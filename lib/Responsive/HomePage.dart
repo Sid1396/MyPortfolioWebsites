@@ -1369,7 +1369,7 @@ class _HomePageState extends State<HomePage> {
                           child: Text("DESIGNED AND DEVELOPED BY YOURS TRULY. SIDDHESH GURAV",
                               style: GoogleFonts.ubuntu(
                                   textStyle: TextStyle(
-                                      color: black,
+                                      color: red,
                                       fontSize: ScreenUtil().setSp(22,
                                           allowFontScalingSelf: true),
                                       fontWeight: FontWeight.w800,
