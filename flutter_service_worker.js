@@ -4,9 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "b71c921661a148248d783aaeb75db469",
-"index.html": "e31ea7f8fe732fbfa03d2da4ad0b1b00",
-"/": "e31ea7f8fe732fbfa03d2da4ad0b1b00",
-"main.dart.js": "ecaa2d0d3a3741175ea6c87cc09bc812",
+"index.html": "9f82f488fbdfdd4b04f39dd818b01b3e",
+"/": "9f82f488fbdfdd4b04f39dd818b01b3e",
+"main.dart.js": "5c6bcfb867d5eaae25a10c84963415cf",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
@@ -42,7 +42,7 @@ const RESOURCES = {
 ".git/refs/remotes/origin/main": "de8932aa81d973f99db3e9d101f80666",
 ".git/index": "38120425ea7f8d1863e299e76a52aa51",
 ".git/COMMIT_EDITMSG": "bc54125d78982c529047154ba0571edc",
-"assets/AssetManifest.json": "8308cd517240eeceefc17ff53a54fe59",
+"assets/AssetManifest.json": "efe6b0c466d58e9cdb8ef1987487b33b",
 "assets/NOTICES": "159eeff9975f2835897ab5057276056c",
 "assets/FontManifest.json": "5a32d4310a6f5d9a6b651e75ba0d7372",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
@@ -59,8 +59,24 @@ const RESOURCES = {
 "assets/packages/flutter_signin_button/assets/logos/3.0x/facebook_new.png": "12531aa3541312b7e5ddd41223fc60cb",
 "assets/packages/flutter_signin_button/assets/logos/facebook_new.png": "e1dff5c319a9d7898aee817f624336e3",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"assets/assets/backgorund_img.jpg": "8e74a04cb996e435041294482566ec2c",
-"assets/assets/appdevloper.jpg": "3013f864719a4dd698de696b7ce6aebb"
+"assets/assets/images/backgorund_img.jpg": "8e74a04cb996e435041294482566ec2c",
+"assets/assets/images/git.png": "fa21ef229f2f68065d3f4f60241626da",
+"assets/assets/images/website.jpg": "62a736b21c1184bf8119a8665b5c17f3",
+"assets/assets/images/callme.json": "033a72ff0a2d9df82a50aaa529834f24",
+"assets/assets/images/taapmaan.jpg": "0645b119b44e62a68c27f277d91b0de7",
+"assets/assets/images/qualus.jpg": "85f0b4ceb43fcfa948bb0b080b9f66af",
+"assets/assets/images/smit.jpg": "1077ba631985993ef20cdfae89a17260",
+"assets/assets/images/gitred.png": "2a3b2de94d3b96a257ef0a0dc02c9b8c",
+"assets/assets/images/instagramred.png": "beab5729e7567dd14365309b7432da92",
+"assets/assets/images/foodiisoft.jpg": "ec8d33d3529bff6a12efecb1e5b9d359",
+"assets/assets/images/appdevloper.jpg": "3013f864719a4dd698de696b7ce6aebb",
+"assets/assets/images/linkedin.png": "5ec27f3b9d6d5feece06b65de610cd64",
+"assets/assets/images/linkined.png": "8832989afbcacaed078697d592cd23b1",
+"assets/assets/images/shopgolocal.jpg": "79fb06cc75982315be063d10cb6d797f",
+"assets/assets/images/instagramwhite.png": "d6796e31ddab212836d5f79b8c259979",
+"assets/assets/images/google.png": "e641fbde74454d2a838f325599c4d3dd",
+"assets/assets/images/GiveAsk.jpg": "348159d63b8c22c50f386fa0c960a8d0",
+"assets/assets/images/gmailred.png": "7b538351e534d6b6d51c72d3a30971b4"
 };
 
 // The application shell files that are downloaded before a service worker can
