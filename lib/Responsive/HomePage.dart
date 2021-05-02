@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hovering/hovering.dart';
-import 'package:lottie/lottie.dart';
+import 'package:mailto/mailto.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_value.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+
 
 import 'Constant.dart';
 
@@ -44,6 +47,20 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void _launchURL(String url) async =>
+      await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+
+  launchMailto() async {
+    final mailtoLink = Mailto(
+      to: ['siddhesh7987@gmail.com'],
+      body:"Hello Siddhesh"
+    );
+    // Convert the Mailto instance into a string.
+    // Use either Dart's string interpolation
+    // or the toString() method.
+    await launch('$mailtoLink');
+  }
+
   @override
   void initState() {
     _scrollController = ScrollController();
@@ -77,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   ResponsiveVisibility(
                     child: headerSectionforMobile(size),
                     visible: false,
-                    visibleWhen: [Condition.smallerThan(name: MOBILE)],
+                    visibleWhen: [Condition.smallerThan(name: MOBILE),Condition.equals(name: MOBILE)],
                   ),
                   ResponsiveVisibility(
                     child: aboutSection(size),
@@ -87,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                   ResponsiveVisibility(
                     child: aboutSectionforMobile(size),
                     visible: false,
-                    visibleWhen: [Condition.smallerThan(name: MOBILE)],
+                    visibleWhen: [Condition.smallerThan(name: MOBILE),Condition.equals(name: MOBILE)],
                   ),
                   ResponsiveVisibility(
                     child: projectSection(size),
@@ -97,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                   ResponsiveVisibility(
                     child: projectSectionforMobile(size),
                     visible: false,
-                    visibleWhen: [Condition.smallerThan(name: MOBILE)],
+                    visibleWhen: [Condition.smallerThan(name: MOBILE),Condition.equals(name: MOBILE)],
                   ),
                   ResponsiveVisibility(
                     child: contactSection(size),
@@ -107,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                   ResponsiveVisibility(
                     child: contactSectionforMobile(size),
                     visible: false,
-                    visibleWhen: [Condition.smallerThan(name: MOBILE)],
+                    visibleWhen: [Condition.smallerThan(name: MOBILE),Condition.equals(name: MOBILE)],
                   ),
                 ],
               ),
@@ -403,30 +420,35 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Container(
                             child: TweenAnimationBuilder(
-                              child: Container(
-                                margin: EdgeInsets.only(top: 20),
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(6)),
-                                    gradient: LinearGradient(colors: [
-                                      Colors.black,
-                                      Color.fromRGBO(112, 11, 29, 1)
-                                    ])),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 15.0,
-                                      top: 15,
-                                      bottom: 15,
-                                      right: 40),
-                                  child: Text("CONTACT ME",
-                                      style: GoogleFonts.ubuntu(
-                                          textStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: ScreenUtil().setSp(15,
-                                                  allowFontScalingSelf: true),
-                                              fontWeight: FontWeight.bold,
-                                              decoration:
-                                                  TextDecoration.none))),
+                              child: GestureDetector(
+                                onTap: (){
+                                  launchMailto();
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.only(top: 20),
+                                  decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(6)),
+                                      gradient: LinearGradient(colors: [
+                                        Colors.black,
+                                        Color.fromRGBO(112, 11, 29, 1)
+                                      ])),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 15.0,
+                                        top: 15,
+                                        bottom: 15,
+                                        right: 40),
+                                    child: Text("CONTACT ME",
+                                        style: GoogleFonts.ubuntu(
+                                            textStyle: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: ScreenUtil().setSp(15,
+                                                    allowFontScalingSelf: true),
+                                                fontWeight: FontWeight.bold,
+                                                decoration:
+                                                    TextDecoration.none))),
+                                  ),
                                 ),
                               ),
                               duration: Duration(milliseconds: 3000),
@@ -453,37 +475,58 @@ class _HomePageState extends State<HomePage> {
                       margin: EdgeInsets.only(bottom: 40),
                       child: Row(
                         children: [
-                          Image(
-                            width: 25,
-                            height: 25,
-                            image: AssetImage('assets/images/google.png'),
-                            fit: BoxFit.contain,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 50.0),
+                          GestureDetector(
+                            onTap: (){
+                              launchMailto();
+                            },
                             child: Image(
                               width: 25,
                               height: 25,
-                              image: AssetImage("assets/images/linkedin.png"),
+                              image: AssetImage('assets/images/google.png'),
                               fit: BoxFit.contain,
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 50.0),
-                            child: Image(
-                              width: 25,
-                              height: 25,
-                              image: AssetImage("assets/images/git.png"),
-                              fit: BoxFit.contain,
+                            child: GestureDetector(
+                              onTap: (){
+                                _launchURL("https://www.linkedin.com/in/siddhesh-gurav-829438182/");
+                              },
+                              child: Image(
+                                width: 25,
+                                height: 25,
+                                image: AssetImage("assets/images/linkedin.png"),
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 50.0),
-                            child: Image(
-                              width: 25,
-                              height: 25,
-                              image: AssetImage("assets/images/instagramwhite.png"),
-                              fit: BoxFit.contain,
+                            child: GestureDetector(
+                              onTap: (){
+                                _launchURL("https://github.com/Sid1396");
+
+                              },
+                              child: Image(
+                                width: 25,
+                                height: 25,
+                                image: AssetImage("assets/images/git.png"),
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 50.0),
+                            child: GestureDetector(
+                              onTap: (){
+                                _launchURL("https://www.instagram.com/sid_1396/");
+                              },
+                              child: Image(
+                                width: 25,
+                                height: 25,
+                                image: AssetImage("assets/images/instagramwhite.png"),
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                         ],
@@ -667,23 +710,28 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Container(
                           child: TweenAnimationBuilder(
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20, bottom: 60),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(3)),
-                                  border: Border.all(width: 1.0, color: white)),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10.0, top: 10, bottom: 10, right: 10),
-                                child: Text("CONTACT ME",
-                                    style: GoogleFonts.ubuntu(
-                                        textStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: ScreenUtil().setSp(35,
-                                                allowFontScalingSelf: true),
-                                            fontWeight: FontWeight.bold,
-                                            decoration: TextDecoration.none))),
+                            child: GestureDetector(
+                              onTap: (){
+                                launchMailto();
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(top: 20, bottom: 60),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(3)),
+                                    border: Border.all(width: 1.0, color: white)),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10.0, top: 10, bottom: 10, right: 10),
+                                  child: Text("CONTACT ME",
+                                      style: GoogleFonts.ubuntu(
+                                          textStyle: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: ScreenUtil().setSp(35,
+                                                  allowFontScalingSelf: true),
+                                              fontWeight: FontWeight.bold,
+                                              decoration: TextDecoration.none))),
+                                ),
                               ),
                             ),
                             duration: Duration(milliseconds: 3000),
@@ -711,37 +759,58 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image(
-                          width: 25,
-                          height: 25,
-                          image: AssetImage("assets/images/google.png"),
-                          fit: BoxFit.contain,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 50.0),
+                        GestureDetector(
+                          onTap: (){
+                            launchMailto();
+                          },
                           child: Image(
                             width: 25,
                             height: 25,
-                            image: AssetImage("assets/images/linkedin.png"),
+                            image: AssetImage("assets/images/google.png"),
                             fit: BoxFit.contain,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 50.0),
-                          child: Image(
-                            width: 25,
-                            height: 25,
-                            image: AssetImage("assets/images/git.png"),
-                            fit: BoxFit.contain,
+                          child: GestureDetector(
+                            onTap: (){
+                              _launchURL("https://www.linkedin.com/in/siddhesh-gurav-829438182/");
+                            },
+                            child: Image(
+                              width: 25,
+                              height: 25,
+                              image: AssetImage("assets/images/linkedin.png"),
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 50.0),
-                          child: Image(
-                            width: 25,
-                            height: 25,
-                            image: AssetImage("assets/images/instagramwhite.png"),
-                            fit: BoxFit.contain,
+                          child: GestureDetector(
+                            onTap: (){
+                              _launchURL("https://github.com/Sid1396");
+
+                            },
+                            child: Image(
+                              width: 25,
+                              height: 25,
+                              image: AssetImage("assets/images/git.png"),
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 50.0),
+                          child: GestureDetector(
+                            onTap: (){
+                              _launchURL("https://www.instagram.com/sid_1396/");
+                            },
+                            child: Image(
+                              width: 25,
+                              height: 25,
+                              image: AssetImage("assets/images/instagramwhite.png"),
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         ),
 
@@ -817,6 +886,9 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      width: size.width*0.02,
+                    ),
                     Expanded(
                       child: Container(
                         color: Colors.white,
@@ -859,23 +931,28 @@ class _HomePageState extends State<HomePage> {
                                           fontWeight: FontWeight.w400,
                                           decoration: TextDecoration.none))),
                             ),
-                            Container(
-                              margin: EdgeInsets.only(top: 20),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(6)),
-                                  gradient: LinearGradient(colors: [red, red])),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 15, top: 15, bottom: 15, right: 15),
-                                child: Text("Download CV",
-                                    style: GoogleFonts.ubuntu(
-                                        textStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: ScreenUtil().setSp(15,
-                                                allowFontScalingSelf: true),
-                                            fontWeight: FontWeight.bold,
-                                            decoration: TextDecoration.none))),
+                            GestureDetector(
+                              onTap: (){
+                                _launchURL("https://drive.google.com/file/d/1ryRIVbes01q9OSkLyWN5rrg182VXg68r/view?usp=sharing");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(top: 20),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(6)),
+                                    gradient: LinearGradient(colors: [red, red])),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 15, top: 15, bottom: 15, right: 15),
+                                  child: Text("Download CV",
+                                      style: GoogleFonts.ubuntu(
+                                          textStyle: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: ScreenUtil().setSp(15,
+                                                  allowFontScalingSelf: true),
+                                              fontWeight: FontWeight.bold,
+                                              decoration: TextDecoration.none))),
+                                ),
                               ),
                             )
                           ],
@@ -967,22 +1044,27 @@ class _HomePageState extends State<HomePage> {
                 textAlign: TextAlign.center,
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(6)),
-                  gradient: LinearGradient(colors: [red, red])),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    left: 15, top: 15, bottom: 15, right: 15),
-                child: Text("Download CV",
-                    style: GoogleFonts.ubuntu(
-                        textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: ScreenUtil()
-                                .setSp(30, allowFontScalingSelf: true),
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.none))),
+            GestureDetector(
+              onTap: (){
+                _launchURL("https://drive.google.com/file/d/1ryRIVbes01q9OSkLyWN5rrg182VXg68r/view?usp=sharing");
+              },
+              child: Container(
+                margin: EdgeInsets.only(top: 20, bottom: 20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(6)),
+                    gradient: LinearGradient(colors: [red, red])),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15, top: 15, bottom: 15, right: 15),
+                  child: Text("Download CV",
+                      style: GoogleFonts.ubuntu(
+                          textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: ScreenUtil()
+                                  .setSp(30, allowFontScalingSelf: true),
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.none))),
+                ),
               ),
             )
           ],
@@ -1123,6 +1205,7 @@ class _HomePageState extends State<HomePage> {
                       flex: 1,
                       fit:FlexFit.tight,
                       child: Container(
+                      margin: EdgeInsets.only(top:20,right:20),
                           child: Image(
                             image: AssetImage("assets/images/callme.png"),
                             fit: BoxFit.contain,
@@ -1176,37 +1259,58 @@ class _HomePageState extends State<HomePage> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Image(
-                                      width: 40,
-                                      height: 40,
-                                      image: AssetImage("assets/images/gmailred.png"),
-                                      fit: BoxFit.contain,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 50.0),
+                                    GestureDetector(
+                                      onTap: (){
+                                        launchMailto();
+                                      },
                                       child: Image(
                                         width: 40,
                                         height: 40,
-                                        image: AssetImage("assets/images/linkined.png"),
+                                        image: AssetImage("assets/images/gmailred.png"),
                                         fit: BoxFit.contain,
                                       ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 50.0),
-                                      child: Image(
-                                        width: 40,
-                                        height: 40,
-                                        image: AssetImage("assets/images/gitred.png"),
-                                        fit: BoxFit.contain,
+                                      child: GestureDetector(
+                                        onTap: (){
+                                          _launchURL("https://www.linkedin.com/in/siddhesh-gurav-829438182/");
+                                        },
+                                        child: Image(
+                                          width: 40,
+                                          height: 40,
+                                          image: AssetImage("assets/images/linkined.png"),
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 50.0),
-                                      child: Image(
-                                        width: 40,
-                                        height: 40,
-                                        image: AssetImage("assets/images/instagramred.png"),
-                                        fit: BoxFit.contain,
+                                      child: GestureDetector(
+                                        onTap: (){
+                                          _launchURL("https://github.com/Sid1396");
+
+                                        },
+                                        child: Image(
+                                          width: 40,
+                                          height: 40,
+                                          image: AssetImage("assets/images/gitred.png"),
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 50.0),
+                                      child: GestureDetector(
+                                        onTap: (){
+                                          _launchURL("https://www.instagram.com/sid_1396/");
+                                        },
+                                        child: Image(
+                                          width: 40,
+                                          height: 40,
+                                          image: AssetImage("assets/images/instagramred.png"),
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -1269,9 +1373,10 @@ class _HomePageState extends State<HomePage> {
           children: [
             Expanded(
               child: Container(
+                margin: EdgeInsets.only(top:20),
                 child: Image(
                   image: AssetImage("assets/images/callme.png"),
-                  fit: BoxFit.contain,
+                  fit: BoxFit.fill,
                 )
               ),
             ),
@@ -1284,7 +1389,7 @@ class _HomePageState extends State<HomePage> {
                         style: GoogleFonts.ubuntu(
                             textStyle: TextStyle(
                                 color: black,
-                                fontSize: ScreenUtil().setSp(55,
+                                fontSize: ScreenUtil().setSp(85,
                                     allowFontScalingSelf: true),
                                 fontWeight: FontWeight.w800,
                                 decoration: TextDecoration.none))),
@@ -1294,7 +1399,7 @@ class _HomePageState extends State<HomePage> {
                           style: GoogleFonts.ubuntu(
                               textStyle: TextStyle(
                                   color: black,
-                                  fontSize: ScreenUtil().setSp(25,
+                                  fontSize: ScreenUtil().setSp(40,
                                       allowFontScalingSelf: true),
                                   fontWeight: FontWeight.w800,
                                   decoration: TextDecoration.none))),
@@ -1306,26 +1411,34 @@ class _HomePageState extends State<HomePage> {
                           style: GoogleFonts.poppins(
                               textStyle: TextStyle(
                                   color: red,
-                                  fontSize: ScreenUtil().setSp(30,
+                                  fontSize: ScreenUtil().setSp(50,
                                       allowFontScalingSelf: true),
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.none))),
                     ),
-                    Expanded(
-                      child: TweenAnimationBuilder(
-                        child: Container(
-                          margin: EdgeInsets.only(bottom: 40),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image(
+                    TweenAnimationBuilder(
+                      child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap: (){
+                                launchMailto();
+                              },
+                              child: Image(
                                 width: 20,
                                 height: 20,
                                 image: AssetImage("assets/images/gmailred.png"),
                                 fit: BoxFit.contain,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: GestureDetector(
+                                onTap: (){
+                                  _launchURL("https://www.linkedin.com/in/siddhesh-gurav-829438182/");
+
+                                },
                                 child: Image(
                                   width: 20,
                                   height: 20,
@@ -1333,8 +1446,14 @@ class _HomePageState extends State<HomePage> {
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: GestureDetector(
+                                onTap: (){
+                                  _launchURL("https://github.com/Sid1396");
+
+                                },
                                 child: Image(
                                   width: 20,
                                   height: 20,
@@ -1342,8 +1461,13 @@ class _HomePageState extends State<HomePage> {
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: GestureDetector(
+                                onTap: (){
+                                  _launchURL("https://www.instagram.com/sid_1396/");
+                                },
                                 child: Image(
                                   width: 20,
                                   height: 20,
@@ -1351,41 +1475,41 @@ class _HomePageState extends State<HomePage> {
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
-                        duration: Duration(milliseconds: 3000),
-                        curve: Interval(0.9, 0.99, curve: Curves.easeIn),
-                        tween: Tween<double>(begin: 0, end: 1),
-                        builder:
-                            (BuildContext context, double position, Widget child) {
-                          return Opacity(
-                            opacity: position,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
-                              child: child,
                             ),
-                          );
-                        },
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: Text("DESIGNED AND DEVELOPED BY YOURS TRULY. SIDDHESH GURAV",
-                              style: GoogleFonts.ubuntu(
-                                  textStyle: TextStyle(
-                                      color: black,
-                                      fontSize: ScreenUtil().setSp(22,
-                                          allowFontScalingSelf: true),
-                                      fontWeight: FontWeight.w800,
-                                      decoration: TextDecoration.none))),
+                          ],
                         ),
                       ),
+                      duration: Duration(milliseconds: 3000),
+                      curve: Interval(0.9, 0.99, curve: Curves.easeIn),
+                      tween: Tween<double>(begin: 0, end: 1),
+                      builder:
+                          (BuildContext context, double position, Widget child) {
+                        return Opacity(
+                          opacity: position,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                            child: child,
+                          ),
+                        );
+                      },
                     ),
                   ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Text("DESIGNED AND DEVELOPED BY YOURS TRULY. SIDDHESH GURAV",
+                      style: GoogleFonts.ubuntu(
+                          textStyle: TextStyle(
+                              color: black,
+                              fontSize: ScreenUtil().setSp(22,
+                                  allowFontScalingSelf: true),
+                              fontWeight: FontWeight.w800,
+                              decoration: TextDecoration.none))),
                 ),
               ),
             ),
