@@ -20,22 +20,22 @@ class _HomePageState extends State<HomePage> {
   double _scrollPosition = 0;
   double _opacity = 0;
   final List<String> imgList = [
-    'website.jpg',
-    'shopgolocal.jpg',
-    'qualus.jpg',
-    'GiveAsk.jpg',
-    'smit.jpg',
-    'foodiisoft.jpg',
-    'taapmaan.jpg'
+    'assets/images/website.jpg',
+    'assets/images/shopgolocal.jpg',
+    'assets/images/qualus.jpg',
+    'assets/images/GiveAsk.jpg',
+    'assets/images/smit.jpg',
+    'assets/images/foodiisoft.jpg',
+    'assets/images/taapmaan.jpg'
   ];
   final List<String> imgListformobile = [
-    'websiteMob.png',
-    'shopgolocalMob.png',
-    'qualusMob.png',
-    'giveaskMob.png',
-    'smitMob.png',
-    'foodiisoftMob.png',
-    'tapmaanMob.png'
+    'assets/images/websiteMob.png',
+    'assets/images/shopgolocalMob.png',
+    'assets/images/qualusMob.png',
+    'assets/images/giveaskMob.png',
+    'assets/images/smitMob.png',
+    'assets/images/foodiisoftMob.png',
+    'assets/images/tapmaanMob.png'
   ];
 
   _scrollListener() {
@@ -456,7 +456,7 @@ class _HomePageState extends State<HomePage> {
                           Image(
                             width: 25,
                             height: 25,
-                            image: AssetImage("google.png"),
+                            image: AssetImage('assets/images/google.png'),
                             fit: BoxFit.contain,
                           ),
                           Padding(
@@ -464,7 +464,7 @@ class _HomePageState extends State<HomePage> {
                             child: Image(
                               width: 25,
                               height: 25,
-                              image: AssetImage("linkedin.png"),
+                              image: AssetImage("assets/images/linkedin.png"),
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -473,7 +473,7 @@ class _HomePageState extends State<HomePage> {
                             child: Image(
                               width: 25,
                               height: 25,
-                              image: AssetImage("git.png"),
+                              image: AssetImage("assets/images/git.png"),
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -482,7 +482,7 @@ class _HomePageState extends State<HomePage> {
                             child: Image(
                               width: 25,
                               height: 25,
-                              image: AssetImage("instagramwhite.png"),
+                              image: AssetImage("assets/images/instagramwhite.png"),
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -515,7 +515,7 @@ class _HomePageState extends State<HomePage> {
               child: TweenAnimationBuilder(
                 duration: Duration(milliseconds: 3000),
                 child: Image(
-                  image: AssetImage("backgorund_img.jpg"),
+                  image: AssetImage("assets/images/backgorund_img.jpg"),
                   fit: BoxFit.contain,
                 ),
                 tween: Tween<double>(begin: 0, end: 1),
@@ -552,7 +552,7 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Image(
-                    image: AssetImage("backgorund_img.jpg"),
+                    image: AssetImage("assets/images/backgorund_img.jpg"),
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -714,7 +714,7 @@ class _HomePageState extends State<HomePage> {
                         Image(
                           width: 25,
                           height: 25,
-                          image: AssetImage("google.png"),
+                          image: AssetImage("assets/images/google.png"),
                           fit: BoxFit.contain,
                         ),
                         Padding(
@@ -722,7 +722,7 @@ class _HomePageState extends State<HomePage> {
                           child: Image(
                             width: 25,
                             height: 25,
-                            image: AssetImage("linkedin.png"),
+                            image: AssetImage("assets/images/linkedin.png"),
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -731,7 +731,7 @@ class _HomePageState extends State<HomePage> {
                           child: Image(
                             width: 25,
                             height: 25,
-                            image: AssetImage("git.png"),
+                            image: AssetImage("assets/images/git.png"),
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -740,7 +740,7 @@ class _HomePageState extends State<HomePage> {
                           child: Image(
                             width: 25,
                             height: 25,
-                            image: AssetImage("instagramwhite.png"),
+                            image: AssetImage("assets/images/instagramwhite.png"),
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -812,7 +812,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: Container(
                         child: Image(
-                          image: AssetImage("appdevloper.jpg"),
+                          image: AssetImage("assets/images/appdevloper.jpg"),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -925,7 +925,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               child: Image(
-                image: AssetImage("appdevloper.jpg"),
+                image: AssetImage("assets/images/appdevloper.jpg"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -1123,7 +1123,7 @@ class _HomePageState extends State<HomePage> {
                       flex: 1,
                       child: Container(
                           child:
-                              Lottie.network('https://assets1.lottiefiles.com/private_files/lf30_b4aihw1r.json', fit: BoxFit.contain)),
+                          Lottie.asset('assets/images/callme.json', fit: BoxFit.contain)),
                     ),
                     Flexible(
                       flex: 1,
@@ -1174,7 +1174,7 @@ class _HomePageState extends State<HomePage> {
                                     Image(
                                       width: 40,
                                       height: 40,
-                                      image: AssetImage("gmailred.png"),
+                                      image: AssetImage("assets/images/gmailred.png"),
                                       fit: BoxFit.contain,
                                     ),
                                     Padding(
@@ -1182,7 +1182,7 @@ class _HomePageState extends State<HomePage> {
                                       child: Image(
                                         width: 40,
                                         height: 40,
-                                        image: AssetImage("linkined.png"),
+                                        image: AssetImage("assets/images/linkined.png"),
                                         fit: BoxFit.contain,
                                       ),
                                     ),
@@ -1191,7 +1191,7 @@ class _HomePageState extends State<HomePage> {
                                       child: Image(
                                         width: 40,
                                         height: 40,
-                                        image: AssetImage("gitred.png"),
+                                        image: AssetImage("assets/images/gitred.png"),
                                         fit: BoxFit.contain,
                                       ),
                                     ),
@@ -1200,7 +1200,7 @@ class _HomePageState extends State<HomePage> {
                                       child: Image(
                                         width: 40,
                                         height: 40,
-                                        image: AssetImage("instagramred.png"),
+                                        image: AssetImage("assets/images/instagramred.png"),
                                         fit: BoxFit.contain,
                                       ),
                                     ),
@@ -1265,7 +1265,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               child: Container(
                   child:
-                  Lottie.network('https://assets1.lottiefiles.com/private_files/lf30_b4aihw1r.json', fit: BoxFit.contain)),
+                  Lottie.asset('assets/images/callme.json', fit: BoxFit.contain)),
             ),
             Expanded(
               child: Container(
@@ -1313,7 +1313,7 @@ class _HomePageState extends State<HomePage> {
                               Image(
                                 width: 20,
                                 height: 20,
-                                image: AssetImage("gmailred.png"),
+                                image: AssetImage("assets/images/gmailred.png"),
                                 fit: BoxFit.contain,
                               ),
                               Padding(
@@ -1321,7 +1321,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Image(
                                   width: 20,
                                   height: 20,
-                                  image: AssetImage("linkined.png"),
+                                  image: AssetImage("assets/images/linkined.png"),
                                   fit: BoxFit.contain,
                                 ),
                               ),
@@ -1330,7 +1330,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Image(
                                   width: 20,
                                   height: 20,
-                                  image: AssetImage("gitred.png"),
+                                  image: AssetImage("assets/images/gitred.png"),
                                   fit: BoxFit.contain,
                                 ),
                               ),
@@ -1339,7 +1339,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Image(
                                   width: 20,
                                   height: 20,
-                                  image: AssetImage("instagramred.png"),
+                                  image: AssetImage("assets/images/instagramred.png"),
                                   fit: BoxFit.contain,
                                 ),
                               ),
