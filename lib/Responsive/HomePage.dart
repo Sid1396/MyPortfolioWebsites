@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                   ResponsiveVisibility(
                     child: headerSectionforMobile(size),
                     visible: false,
-                    visibleWhen: [Condition.equals(name: MOBILE)],
+                    visibleWhen: [Condition.smallerThan(name: MOBILE)],
                   ),
                   ResponsiveVisibility(
                     child: aboutSection(size),
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                   ResponsiveVisibility(
                     child: aboutSectionforMobile(size),
                     visible: false,
-                    visibleWhen: [Condition.equals(name: MOBILE)],
+                    visibleWhen: [Condition.smallerThan(name: MOBILE)],
                   ),
                   ResponsiveVisibility(
                     child: projectSection(size),
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                   ResponsiveVisibility(
                     child: projectSectionforMobile(size),
                     visible: false,
-                    visibleWhen: [Condition.equals(name: MOBILE)],
+                    visibleWhen: [Condition.smallerThan(name: MOBILE)],
                   ),
                   ResponsiveVisibility(
                     child: contactSection(size),
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                   ResponsiveVisibility(
                     child: contactSectionforMobile(size),
                     visible: false,
-                    visibleWhen: [Condition.equals(name: MOBILE)],
+                    visibleWhen: [Condition.smallerThan(name: MOBILE)],
                   ),
                 ],
               ),
