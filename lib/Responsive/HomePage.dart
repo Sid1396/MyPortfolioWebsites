@@ -1118,13 +1118,18 @@ class _HomePageState extends State<HomePage> {
                 margin: EdgeInsets.only(bottom: 30),
                 child: Row(
                   children: [
+
                     Flexible(
-                      fit: FlexFit.tight,
                       flex: 1,
+                      fit:FlexFit.tight,
                       child: Container(
-                          child:
-                          Lottie.asset('assets/images/callme.json', fit: BoxFit.contain)),
+                          child: Image(
+                            image: AssetImage("assets/images/callme.png"),
+                            fit: BoxFit.contain,
+                          )
+                      ),
                     ),
+
                     Flexible(
                       flex: 1,
                       fit: FlexFit.tight,
@@ -1262,10 +1267,13 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
+            Expanded(
               child: Container(
-                  child:
-                  Lottie.asset('assets/images/callme.json', fit: BoxFit.contain)),
+                child: Image(
+                  image: AssetImage("assets/images/callme.png"),
+                  fit: BoxFit.contain,
+                )
+              ),
             ),
             Expanded(
               child: Container(
