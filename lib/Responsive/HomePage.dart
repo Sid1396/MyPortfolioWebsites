@@ -922,7 +922,7 @@ class _HomePageState extends State<HomePage> {
                             Padding(
                               padding: const EdgeInsets.only(top: 15.0),
                               child: Text(
-                                  "A hard-working, Detail-oriented, methodical professional and self-motivated Mobile Application Developer. Worked as an Application Developer with 2 years experience in continuously developing, implementing and adopting new technologies to maximize development efficiency and innovate applications. Skills involve design, develop, implement and enhance highly optimized cross-platform hybrid as well as native mobile apps and methods to meet both internal and external analysis requirements.",
+                                  "A hard-working, Detail-oriented, Professional and self-motivated Mobile Application Developer. Worked as an Application Developer with 2 years experience in continuously developing, implementing and adopting new technologies to maximize development efficiency and innovate applications. Skills involve design, develop, implement and enhance highly optimized cross-platform hybrid as well as native mobile apps and methods to meet both internal and external analysis requirements.",
                                   style: GoogleFonts.poppins(
                                       textStyle: TextStyle(
                                           color: black,
@@ -933,7 +933,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             GestureDetector(
                               onTap: (){
-                                _launchURL("https://drive.google.com/file/d/1ryRIVbes01q9OSkLyWN5rrg182VXg68r/view?usp=sharing");
+                                _launchURL("https://drive.google.com/file/d/1fzvnA4Oz4tT6rFSTg-UVkF13kVyf6Cky/view?usp=sharing");
                               },
                               child: Container(
                                 margin: EdgeInsets.only(top: 20),
@@ -1046,7 +1046,7 @@ class _HomePageState extends State<HomePage> {
             ),
             GestureDetector(
               onTap: (){
-                _launchURL("https://drive.google.com/file/d/1ryRIVbes01q9OSkLyWN5rrg182VXg68r/view?usp=sharing");
+                _launchURL("https://drive.google.com/file/d/1fzvnA4Oz4tT6rFSTg-UVkF13kVyf6Cky/view?usp=sharing");
               },
               child: Container(
                 margin: EdgeInsets.only(top: 20, bottom: 20),
@@ -1253,82 +1253,67 @@ class _HomePageState extends State<HomePage> {
                                           fontWeight: FontWeight.bold,
                                           decoration: TextDecoration.none))),
                             ),
-                            TweenAnimationBuilder(
-                              child: Container(
-                                margin: EdgeInsets.only(bottom: 40),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    GestureDetector(
+                            Container(
+                              margin: EdgeInsets.only(top: 20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  GestureDetector(
+                                    onTap: (){
+                                      launchMailto();
+                                    },
+                                    child: Image(
+                                      width: 40,
+                                      height: 40,
+                                      image: AssetImage("assets/images/gmailred.png"),
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 50.0),
+                                    child: GestureDetector(
                                       onTap: (){
-                                        launchMailto();
+                                        _launchURL("https://www.linkedin.com/in/siddhesh-gurav-829438182/");
                                       },
                                       child: Image(
                                         width: 40,
                                         height: 40,
-                                        image: AssetImage("assets/images/gmailred.png"),
+                                        image: AssetImage("assets/images/linkined.png"),
                                         fit: BoxFit.contain,
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 50.0),
-                                      child: GestureDetector(
-                                        onTap: (){
-                                          _launchURL("https://www.linkedin.com/in/siddhesh-gurav-829438182/");
-                                        },
-                                        child: Image(
-                                          width: 40,
-                                          height: 40,
-                                          image: AssetImage("assets/images/linkined.png"),
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 50.0),
-                                      child: GestureDetector(
-                                        onTap: (){
-                                          _launchURL("https://github.com/Sid1396");
-
-                                        },
-                                        child: Image(
-                                          width: 40,
-                                          height: 40,
-                                          image: AssetImage("assets/images/gitred.png"),
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 50.0),
-                                      child: GestureDetector(
-                                        onTap: (){
-                                          _launchURL("https://www.instagram.com/sid_1396/");
-                                        },
-                                        child: Image(
-                                          width: 40,
-                                          height: 40,
-                                          image: AssetImage("assets/images/instagramred.png"),
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              duration: Duration(milliseconds: 3000),
-                              curve: Interval(0.9, 0.99, curve: Curves.easeIn),
-                              tween: Tween<double>(begin: 0, end: 1),
-                              builder:
-                                  (BuildContext context, double position, Widget child) {
-                                return Opacity(
-                                  opacity: position,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(top: 20.0),
-                                    child: child,
                                   ),
-                                );
-                              },
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 50.0),
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        _launchURL("https://github.com/Sid1396");
+
+                                      },
+                                      child: Image(
+                                        width: 40,
+                                        height: 40,
+                                        image: AssetImage("assets/images/gitred.png"),
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 50.0),
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        _launchURL("https://www.instagram.com/sid_1396/");
+                                      },
+                                      child: Image(
+                                        width: 40,
+                                        height: 40,
+                                        image: AssetImage("assets/images/instagramred.png"),
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             )
                           ],
                         ),
@@ -1416,82 +1401,68 @@ class _HomePageState extends State<HomePage> {
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.none))),
                     ),
-                    TweenAnimationBuilder(
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            GestureDetector(
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                              launchMailto();
+                            },
+                            child: Image(
+                              width: 20,
+                              height: 20,
+                              image: AssetImage("assets/images/gmailred.png"),
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: GestureDetector(
                               onTap: (){
-                                launchMailto();
+                                _launchURL("https://www.linkedin.com/in/siddhesh-gurav-829438182/");
+
                               },
                               child: Image(
                                 width: 20,
                                 height: 20,
-                                image: AssetImage("assets/images/gmailred.png"),
+                                image: AssetImage("assets/images/linkined.png"),
                                 fit: BoxFit.contain,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20.0),
-                              child: GestureDetector(
-                                onTap: (){
-                                  _launchURL("https://www.linkedin.com/in/siddhesh-gurav-829438182/");
-
-                                },
-                                child: Image(
-                                  width: 20,
-                                  height: 20,
-                                  image: AssetImage("assets/images/linkined.png"),
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20.0),
-                              child: GestureDetector(
-                                onTap: (){
-                                  _launchURL("https://github.com/Sid1396");
-
-                                },
-                                child: Image(
-                                  width: 20,
-                                  height: 20,
-                                  image: AssetImage("assets/images/gitred.png"),
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20.0),
-                              child: GestureDetector(
-                                onTap: (){
-                                  _launchURL("https://www.instagram.com/sid_1396/");
-                                },
-                                child: Image(
-                                  width: 20,
-                                  height: 20,
-                                  image: AssetImage("assets/images/instagramred.png"),
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      duration: Duration(milliseconds: 3000),
-                      curve: Interval(0.9, 0.99, curve: Curves.easeIn),
-                      tween: Tween<double>(begin: 0, end: 1),
-                      builder:
-                          (BuildContext context, double position, Widget child) {
-                        return Opacity(
-                          opacity: position,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
-                            child: child,
                           ),
-                        );
-                      },
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: GestureDetector(
+                              onTap: (){
+                                _launchURL("https://github.com/Sid1396");
+
+                              },
+                              child: Image(
+                                width: 20,
+                                height: 20,
+                                image: AssetImage("assets/images/gitred.png"),
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: GestureDetector(
+                              onTap: (){
+                                _launchURL("https://www.instagram.com/sid_1396/");
+                              },
+                              child: Image(
+                                width: 20,
+                                height: 20,
+                                image: AssetImage("assets/images/instagramred.png"),
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
